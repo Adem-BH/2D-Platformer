@@ -13,6 +13,9 @@ public class Health : MonoBehaviour
     public float health;
     public Slider HealthSlider;
 
+    public AudioSource Dead;
+    public AudioSource HealthBonus;
+
     void Die()
     {
 
@@ -22,14 +25,20 @@ public class Health : MonoBehaviour
     }
      public void TakeDamage(float ammount)
     {
-
-        health -= ammount;
-
-        if (health <= 0)
+        if (GetComponent<PlayerMouvement>().Invincible == false)
         {
+            health -= ammount;
+            GetComponent<AudioSource>().Play();
 
-            health = 0;
-            Die();
+            if (health <= 0)
+            {
+                health = 0;
+                Dead.Play();
+                Destroy(Dead);
+                Destroy(GetComponent<AudioSource>());
+                Die();
+
+            }
 
         }
 
@@ -43,6 +52,7 @@ public class Health : MonoBehaviour
         {
 
             health += bonus;
+            HealthBonus.Play();
 
             if (health > MaxHealth)
             {

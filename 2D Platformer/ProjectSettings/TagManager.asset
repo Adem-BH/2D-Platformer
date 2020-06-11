@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,9 @@ TagManager:
   - name: Background
     uniqueID: 4130449671
     locked: 0
+  - name: Effects
+    uniqueID: 1920940861
+    locked: 0
   - name: Tiles
     uniqueID: 3224469165
     locked: 0
@@ -55,4 +59,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2014848141
+    locked: 0
+  - name: Canvas
+    uniqueID: 3676853643
     locked: 0
